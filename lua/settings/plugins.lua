@@ -11,5 +11,21 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use {
+        "akinsho/toggleterm.nvim", 
+        tag = 'v1.*', 
+        config = function()
+            require("toggleterm").setup({
+            })
+        end
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
+    use 'neovim/nvim-lspconfig'
+    use { 'ms-jpq/coq_nvim', branch = 'coq' }
+    use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+    use { 'ms-jpq/coq.thirdparty', branch = '3p' }
 end)
 
